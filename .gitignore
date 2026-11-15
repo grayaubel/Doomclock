@@ -4,3 +4,4 @@
 .vscode/launch.json
 .vscode/ipch
 Arduino_Code/secrets.h
+include/secrets.h
