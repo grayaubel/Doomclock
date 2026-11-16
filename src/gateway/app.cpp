@@ -206,7 +206,8 @@ void appCommand(char c) { pendingCmd = c; }
 
 static void runCommand(char c) {
   time_t now = timeValid() ? nowUtc() : 0;
-  if (c == 'v') { Serial.println("[APP] servo release test"); servoRelease(); }
+  if (c == 't') { Serial.println("[APP] touch calibration"); uiCalibrate(); uiShow(settingsValid() ? SCR_HOME : SCR_SETUP); }
+  else if (c == 'v') { Serial.println("[APP] servo release test"); servoRelease(); }
   else if (c == 'b') { Serial.println("[APP] buzzer test"); buzzer(BZ_ALARM); }
   else if (c == 'A' && now) {
     time_t w = now + 120;
@@ -480,8 +481,7 @@ void appBegin() {
 }
 
 void TaskApp(void*) {
-  uiBegin();
-  if (!uiHasCalibration()) uiCalibrate();
+  uiBegin();                                                 // no forced touch calibration: defaults until 't' / Settings -> Touch cal
   uiShow(settingsValid() ? SCR_HOME : SCR_SETUP);           // first boot: the week must be set
   TickType_t last = xTaskGetTickCount();
   for (;;) {

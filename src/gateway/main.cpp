@@ -20,6 +20,7 @@
  *
  * Serial commands: s = stats   h = hall raw   c = calibrate hall (tray UP!)   d = test Discord
  *                  A = demo: next wake in 2 min   v = test servo release   b = test buzzer
+ *                  t = touch calibration
  */
 #include <Arduino.h>
 #include <Wire.h>
@@ -206,7 +207,7 @@ void loop() {
       Serial.printf("[HALL] baseline saved = %d (do this with the tray UP / no magnet near)\n", hallBaseline);
     }
     else if (c == 'd') postNotify("🔔 ทดสอบ Discord จาก Doomclock gateway");
-    else if (c == 'A' || c == 'v' || c == 'b') appCommand(c);
+    else if (c == 'A' || c == 'v' || c == 'b' || c == 't') appCommand(c);
   }
   vTaskDelay(pdMS_TO_TICKS(50));
 }

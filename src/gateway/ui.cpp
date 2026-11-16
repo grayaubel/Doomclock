@@ -61,9 +61,15 @@ void uiBegin() {
   uiPrefs.begin("dcui", false);
   if (uiPrefs.getBytesLength("tcal") == sizeof(calData)) {
     uiPrefs.getBytes("tcal", calData, sizeof(calData));
-    tft.setTouch(calData);
     haveCal = true;
+  } else {
+    // Typical XPT2046 values for a 3.5" 480x320 panel in landscape (rotation 1). Close enough for the
+    // big buttons; for exact taps calibrate once: serial 't' or Settings -> Touch cal.
+    static const uint16_t DEFAULT_CAL[5] = {275, 3620, 264, 3532, 1};
+    memcpy(calData, DEFAULT_CAL, sizeof(calData));
+    Serial.println("[UI] no touch calibration saved - using defaults (serial 't' to calibrate)");
   }
+  tft.setTouch(calData);
 }
 
 bool uiHasCalibration() { return haveCal; }
@@ -111,7 +117,7 @@ void uiKnobPress() {
 
 UiAction uiPollTouch() {
   uint16_t x, y;
-  bool down = haveCal && tft.getTouch(&x, &y, 500);
+  bool down = tft.getTouch(&x, &y, 500);        // unconnected touch reads Z = 0: never "pressed"
   bool tap = down && !touchWasDown;
   touchWasDown = down;
   if (!tap) return UA_NONE;
