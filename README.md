@@ -9,7 +9,8 @@ Embedded System (CEDT) Final Project 2026
 include/doom_protocol.h   รูปแบบ packet ESP-NOW (node และ gateway ใช้ไฟล์เดียวกัน)
 include/secrets.example.h ต้นแบบ secrets.h (ห้าม commit secrets.h)
 src/node/                 firmware ของ bed sensor node
-src/gateway/              firmware ของนาฬิกา
+src/gateway/              firmware ของนาฬิกา (จอ, state machine, AI, cloud)
+tools/ai/                 script เทรนโมเดล AI จากข้อมูลบน NETPIE แล้วสร้าง src/gateway/ai_model.h
 Arduino_Code/main.ino     ร่างแรกของฝั่ง cloud (เก็บไว้อ้างอิง ไม่ได้ build)
 ```
 
@@ -51,6 +52,9 @@ node จะสแกนหา channel ของ gateway เอง เพรา�
 | `h` | ค่าดิบ Hall เทียบกับ baseline |
 | `c` | บันทึก baseline ของ Hall (ทำตอนแม่เหล็กอยู่ห่าง) |
 | `d` | ทดสอบ Discord |
+| `A` | เดโม: เลื่อนเวลาปลุกครั้งถัดไปมาเป็นอีก 2 นาที |
+| `v` | ทดสอบ servo ดึงลิ้นล็อก |
+| `b` | ทดสอบเสียงปลุก |
 
 | อาการ | สาเหตุที่น่าจะเป็น |
 |---|---|
@@ -87,12 +91,14 @@ node จะสแกนหา channel ของ gateway เอง เพรา�
 | DS3231 | SDA / SCL | 21 / 22 |
 | DHT11 | DATA | 27 |
 | KY-024 | AO / DO / **+ ต่อ 3V3 เท่านั้น** | 34 / 35 |
-| KY-040 | CLK / DT / SW | 32 / 33 / 25 (stage 2) |
-| KY-004 | S | 26 (stage 2) |
-| KY-006 | S | 13 (stage 2) |
-| MG90S | signal (ไฟ 5 V แยก + C 470 µF) | 16 (stage 2) |
-| ILI9488 SPI | SCK / MOSI / CS / DC / RST | 18 / 23 / 5 / 2 / 4 (stage 2) |
-| XPT2046 touch | T_CLK / T_DIN / T_DO / T_CS / T_IRQ | 18 / 23 / 19 / 15 / 36 (stage 2) |
+| KY-040 (ไฟ 3V3) | CLK / DT / SW | 32 / 33 / 25 |
+| KY-004 | S | 26 |
+| KY-006 | S | 13 |
+| MG90S | signal (ไฟ 5 V แยก + C 470 µF) | 16 |
+| ILI9488 SPI | SCK / MOSI / CS / DC / RST / LED | 18 / 23 / 5 / 2 / 4 / 3V3 |
+| XPT2046 touch | T_CLK / T_DIN / T_DO / T_CS | 18 / 23 / 19 / 15 (T_IRQ ไม่ต้องต่อ) |
+
+ขาของจอตั้งไว้ใน `platformio.ini` (build_flags ของ TFT_eSPI) ส่วนขาอื่นอยู่ใน `src/gateway/config.h`
 
 **ILI9488:** อย่าต่อขา SDO(MISO) ของจอ ให้ต่อแค่ T_DO ของทัชเข้าขา 19 เพราะ ILI9488 ไม่ปล่อยสาย MISO ทำให้ทัชอ่านค่าไม่ได้
 
@@ -106,10 +112,11 @@ node จะสแกนหา channel ของ gateway เอง เพรา�
 - ข้อมูลจาก gateway: `tempCelsius`, `humidityPercent`, `lightIntensity`, `hallRaw`, `phoneInserted`
 - ข้อมูลเตียงจาก node: `bed_*` เช่น `bed_move_count`, `bed_jerk_mg`, `bed_tof_mm` ฯลฯ
 - สถิติการส่ง: `link_rx`, `link_lost`, `link_pdr` (packet delivery rate %) ใช้เป็น metric ในรายงานได้เลย
+- สถานะกลางคืนและ AI: `state`, `ai`, `ai_conf`, `ai_src`, `label` (เฉพาะโหมดเก็บข้อมูล), `wake_rel_min`, `up_min`
 
 record แบบอื่น:
 - `telemetry` เมื่อ node ไม่ได้ส่งข้อมูลมา
-- event: `phoneInserted`, `phoneRemoved`, `nodeOnline`, `nodeOffline`, `powerOn`, `reboot`
+- event: `phoneInserted`, `phoneRemoved`, `nodeOnline`, `nodeOffline`, `powerOn`, `reboot`, `state` (ทุกครั้งที่เปลี่ยนสถานะ), `label`, `earlyUnlock`, `emergencyUnlock`, `releaseFailed`, `settings`
 
 ฝั่ง NETPIE ต้องตั้ง Device Schema ให้เก็บ field ที่ต้องการลง feed เพื่อให้ dashboard วาดกราฟย้อนหลังได้
 
@@ -128,12 +135,52 @@ openssl s_client -showcerts -connect discord.com:443 </dev/null
 
 เอา certificate ตัวสุดท้ายในสาย (root/intermediate) ใส่ใน `NETPIE_ROOT_CA` / `DISCORD_ROOT_CA` ใน `secrets.h`
 
-## งานที่ยังไม่ได้ทำ (stage 2)
+## ใช้นาฬิกา
 
-- ตารางปลุก 7 วัน และเป้าหมายชั่วโมงนอน
-- state machine การล็อก
-- servo
-- จอ TFT + ทัช
-- ปุ่มเก็บ label และโหมดเก็บข้อมูล
-- เสียงเตือน
-- โมเดล AI
+**เปิดเครื่องครั้งแรก:**
+1. จอให้แตะลูกศรตามมุมเพื่อ calibrate ทัช
+2. จอตั้งค่า: ตั้งเวลาปลุกครบ 7 วัน (แตะเวลาแล้วหมุนลูกบิด, แตะ RING/SILENT เพื่อสลับ) และเป้าหมายชั่วโมงนอน แล้วกด SAVE
+
+**การใช้งานปกติ:**
+- **หน้าแรก:** หน้าปัด flip clock, สถานะ และเวลาปลุกครั้งถัดไป
+- **ลูกบิด:** หมุน = เลื่อนเวลาปลุกครั้งถัดไปทีละ 5 นาที, กด = เปิดหน้าตั้งค่า
+- **เวลาปลุก − (เป้านอน + 30 นาที):** ถ้าถาดยังว่าง นาฬิกาจะเตือนจนกว่าจะใส่มือถือ ใส่แล้วล็อกทันที
+- **ใส่มือถือก่อนช่วงนั้น:** จอถามว่าจะล็อกเลยไหม (LOCK / EJECT) กดปุ่มก็ eject ได้
+- **ตอนเช้า:** ปลุก (วัน SILENT ไม่มีเสียง) → ต้องลุกสะสมครบ 30 นาที → servo ปลด ถาดเด้งขึ้น ถ้ากลับไปนอนนาน 2 นาทีจะปลุกซ้ำ
+- **ปลดก่อนเวลา:** กดปุ่มค้าง 2 นาที (มีแถบความคืบหน้าบนจอ และแจ้ง Discord)
+- **ฉุกเฉิน:** ใช้เข็มดันลิ้นล็อกผ่านรูด้านหลัง ระบบตรวจจับได้และแจ้ง Discord
+- **ไฟดับระหว่างล็อก:** เปิดเครื่องกลับมาแล้วยังคงล็อกต่อ
+
+**โหมดเก็บข้อมูล (ตั้งค่า → Data collection ON):** ใช้เก็บข้อมูลไปเทรน AI
+- กด **BED** ตอนปิดไฟนอน
+- พอปลุกให้กด **I'M AWAKE** หลังจากนั้นทุก 4 นาทีจะมีเสียงเบา ๆ ให้แตะจอภายใน 30 วินาที ถ้าไม่แตะ ระบบถือว่าหลับไปแล้ว
+- กดปุ่ม KY-004 ตอนลุกจากเตียงจริง
+- ถ้าลุกแล้วกลับขึ้นเตียง กด **BACK IN BED**
+
+ระหว่างโหมดนี้ การล็อก/ปลดล็อกใช้ label ที่กดแทน AI และ label ทุกตัวถูกส่งขึ้น NETPIE ใน field `label`
+
+## AI
+
+`ai_model.h` ที่มากับ repo ยังไม่ได้เทรน ระหว่างนี้ใช้กฎง่าย ๆ แทนไปก่อน (dashboard จะขึ้น `ai_src = placeholder`) ซึ่งตามเกณฑ์วิชาไม่นับเป็น AI
+
+**ขั้นตอนเทรน:**
+1. เก็บข้อมูลด้วยโหมดเก็บข้อมูลหลายคืน จากผู้นอนหลายคน
+2. Export จาก NETPIE: Device `gateway` → Feed → Export ได้ไฟล์ CSV
+3. ติดตั้งและรัน:
+   ```
+   pip install -r tools/ai/requirements.txt
+   python3 tools/ai/test_parity.py            # เช็กว่า feature ใน Python ตรงกับบน ESP32
+   python3 tools/ai/train.py data/*.csv       # (+ --labels ไฟล์จดเวลาด้วยมือ ถ้ามี)
+   ```
+4. Script จะพิมพ์ accuracy แบบ leave-one-night-out (ทดสอบกับคืนที่โมเดลไม่เคยเห็น) ใช้เป็น metric ในรายงานได้ แล้วเขียนทับ `src/gateway/ai_model.h`
+5. upload gateway ใหม่ dashboard จะขึ้น `ai_src = model`
+
+ตัวอย่างไฟล์จดเวลาด้วยมือ: `tools/ai/manual_labels.example.csv`
+
+## Dashboard
+
+NETPIE → project Doomclock → Console → Dashboard → **Doomclock** มี 7 แผง:
+- **สถานะ:** state, AI, label, นาทีที่ลุก, มือถืออยู่ในกล่องไหม
+- **ห้อง:** อุณหภูมิ, ความชื้น, แสง
+- **ลิงก์:** node online, packet delivery rate
+- **กราฟ 12 ชั่วโมง:** การขยับบนเตียง, ระยะ ToF, ห้อง, และความคืบหน้าตอนตื่น

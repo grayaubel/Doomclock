@@ -1,15 +1,17 @@
 /*
  * Doomclock — GATEWAY (the clock)
  *
- * Stage 1 (checkpoint 20 Nov): data path node -> gateway -> NETPIE -> dashboard.
- *   Sensors here: BH1750 (light), DHT11 (temp/humidity), KY-024 Hall (phone tray down?), DS3231 (time)
- *   ESP-NOW from the bed node with ACK + duplicate/loss counting      (link.cpp)
- *   NETPIE over TLS with store-and-forward on LittleFS                (cloud.cpp)
+ *   Sensors: BH1750 (light), DHT11 (temp/humidity), KY-024 Hall (phone tray down?), DS3231 (time)
+ *   Bed node over ESP-NOW with ACK + duplicate/loss counting          (link.cpp)
+ *   On-device AI: asleep / awake in bed / up                          (ai.cpp, ai_features.c, ai_model.h)
+ *   The night: schedule, nag, lock, alarm, 30 min up, unlock          (app.cpp, settings.cpp)
+ *   Touch screen, knob + button (interrupts), buzzer, servo           (ui.cpp, io.cpp)
+ *   NETPIE over TLS with store-and-forward on LittleFS                (cloud.cpp, record.cpp)
  *   Discord alerts                                                    (notify.cpp)
- * Stage 2 (next): alarm schedule, state machine, servo, TFT UI, AI.
  *
  * FreeRTOS tasks (E1):
- *   TaskLink    prio 3  core 1  ESP-NOW rx + ACK — highest: the node waits only 150 ms for an ACK
+ *   TaskLink    prio 3  core 1  ESP-NOW rx + ACK + AI — highest: the node waits only 150 ms for an ACK
+ *   TaskApp     prio 2  core 1  state machine, screen, inputs from the ISR queue, buzzer, servo (20 ms tick)
  *   TaskSensors prio 2  core 1  BH1750 / DHT11 / Hall
  *   TaskCloud   prio 1  core 0  Wi-Fi, MQTT, offline queue, NTP->RTC
  *   TaskNotify  prio 0  core 0  Discord HTTPS (slow TLS handshakes must not starve anything)
@@ -17,6 +19,7 @@
  * Shared state is guarded by gStateMutex, the I2C bus by gI2cMutex; tasks talk via queues.
  *
  * Serial commands: s = stats   h = hall raw   c = calibrate hall (tray UP!)   d = test Discord
+ *                  A = demo: next wake in 2 min   v = test servo release   b = test buzzer
  */
 #include <Arduino.h>
 #include <Wire.h>
@@ -50,7 +53,8 @@ static int readHall() {
 void TaskSensors(void*) {
   TickType_t last = xTaskGetTickCount();
   int tick = 0, deb = 0;
-  bool tray = false;
+  bool tray;
+  lockState(); tray = gSens.trayDown; unlockState();
   for (;;) {
     vTaskDelayUntil(&last, pdMS_TO_TICKS(100));
     tick++;
@@ -95,6 +99,10 @@ static void printStats() {
                 l.online ? "online" : "offline", (unsigned long)l.rx, (unsigned long)l.lost,
                 (unsigned long)l.dup, (unsigned long)l.bad, gCloudOk ? "OK" : "down",
                 (unsigned long)gOfflineStored, (unsigned long)gOfflineDropped, timeValid() ? "valid" : "unknown");
+  AppStatus a; AiState ai;
+  lockState(); a = gApp; ai = gAi; unlockState();
+  Serial.printf("[APP ] state=%s ai=%s (%.2f, %s) label=%s up=%.1f min wake_rel=%.1f min\n", stateName(a.state),
+                wakeClassName(ai.cls), ai.conf, ai.trained ? "model" : "placeholder", wakeClassName(a.label), a.upMin, a.wakeRelMin);
   if (b.have)
     Serial.printf("[BED ] seq=%lu moves=%u jerk=%u mg gyro=%u cdps tof=%u mm (%u/%u)\n",
                   (unsigned long)b.last.seq, b.last.move_count, b.last.jerk_mean_mg, b.last.gyro_mean_cdps,
@@ -151,6 +159,11 @@ void setup() {
   prefs.begin("gw", false);
   hallBaseline = prefs.getInt("hallBase", HALL_BASELINE_DEF);
 
+  {   // first tray reading before any task starts, so a reboot doesn't look like "phone just inserted"
+    int raw = readHall();
+    gSens.hallRaw = raw;
+    gSens.trayDown = abs(raw - hallBaseline) > HALL_ON_DELTA;
+  }
   bhOk = i2cOk && lightMeter.begin(BH1750::CONTINUOUS_HIGH_RES_MODE);
   dht.begin();
   Serial.printf("[HW] BH1750 %s, hall baseline %d\n", bhOk ? "ok" : "NOT FOUND", hallBaseline);
@@ -161,8 +174,11 @@ void setup() {
   WiFi.setAutoReconnect(true);
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
 
+  ioBegin();
+  settingsBegin();
   linkBegin();
   cloudBegin();
+  appBegin();
 
   esp_reset_reason_t rr = esp_reset_reason();
   if (rr == ESP_RST_POWERON || rr == ESP_RST_BROWNOUT) {
@@ -173,6 +189,7 @@ void setup() {
   }
 
   xTaskCreatePinnedToCore(TaskLink,    "link",    6144,  nullptr, 3, nullptr, 1);
+  xTaskCreatePinnedToCore(TaskApp,     "app",     8192,  nullptr, 2, nullptr, 1);
   xTaskCreatePinnedToCore(TaskSensors, "sensors", 6144,  nullptr, 2, nullptr, 1);
   xTaskCreatePinnedToCore(TaskCloud,   "cloud",   10240, nullptr, 1, nullptr, 0);
   xTaskCreatePinnedToCore(TaskNotify,  "notify",  8192,  nullptr, 0, nullptr, 0);
@@ -189,6 +206,7 @@ void loop() {
       Serial.printf("[HALL] baseline saved = %d (do this with the tray UP / no magnet near)\n", hallBaseline);
     }
     else if (c == 'd') postNotify("🔔 ทดสอบ Discord จาก Doomclock gateway");
+    else if (c == 'A' || c == 'v' || c == 'b') appCommand(c);
   }
   vTaskDelay(pdMS_TO_TICKS(50));
 }

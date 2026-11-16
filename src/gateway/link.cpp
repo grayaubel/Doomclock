@@ -92,6 +92,10 @@ void TaskLink(void*) {
       unlockState();
 
       if (unique) {
+        // on-device AI first, so the record that goes to the cloud carries this window's prediction
+        time_t wEnd = timeValid() ? nowUtc() - p.age_s : (time_t)(millis() / 1000) - p.age_s;
+        float lux; lockState(); lux = gSens.lux; unlockState();
+        aiPushWindow(p, wEnd, lux, wakeRelMinutes(wEnd));
         postBedRecord();
         if (cameBack) {
           postEvent("nodeOnline", "bed node online");
@@ -107,6 +111,7 @@ void TaskLink(void*) {
     if (gLink.online && millis() - gBed.rxMs > NODE_OFFLINE_MS) { gLink.online = false; goneOffline = true; }
     unlockState();
     if (goneOffline) {
+      aiMarkStale();
       postEvent("nodeOffline", "no bed packet for 35 s");
       postNotify("⚠️ **Doomclock:** Bed node ขาดการเชื่อมต่อ (ไม่ได้รับข้อมูลเกิน 35 วินาที)");
       announcedOffline = true;

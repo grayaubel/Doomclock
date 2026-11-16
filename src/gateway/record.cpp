@@ -30,8 +30,8 @@ struct Json {
 }  // namespace
 
 size_t buildRecord(char* out, size_t cap, const char* action, const char* note, bool withBed) {
-  GatewaySensors s; BedState bed; LinkStats link;
-  lockState(); s = gSens; bed = gBed; link = gLink; unlockState();
+  GatewaySensors s; BedState bed; LinkStats link; AppStatus app; AiState ai;
+  lockState(); s = gSens; bed = gBed; link = gLink; app = gApp; ai = gAi; unlockState();
 
   Json j(out, cap);
   j.raw("{\"data\":{");
@@ -48,6 +48,17 @@ size_t buildRecord(char* out, size_t cap, const char* action, const char* note, 
   j.num("lightIntensity", s.lux, 0);
   j.i("hallRaw", s.hallRaw);
   j.bol("phoneInserted", s.trayDown);
+
+  // night logic + AI (ai_* = on-device prediction; label = ground truth in data-collection mode)
+  j.str("state", stateName(app.state));
+  j.str("ai", wakeClassName(ai.cls));
+  j.num("ai_conf", ai.cls == WC_UNKNOWN ? NAN : ai.conf, 2);
+  j.str("ai_src", ai.trained ? "model" : "placeholder");
+  if (app.dataMode) j.str("label", wakeClassName(app.label));
+  float rel = app.wakeRelMin;
+  if (withBed && bed.have && bed.windowEnd && app.nextWake) rel = (float)((double)bed.windowEnd - (double)app.nextWake) / 60.0f;
+  j.num("wake_rel_min", rel, 1);
+  if (app.state == ST_UP || app.upMin > 0) j.num("up_min", app.upMin, 1);
 
   bool fresh = bed.have && (millis() - bed.rxMs) < BED_FRESH_MS;
   j.bol("bed_fresh", fresh);
