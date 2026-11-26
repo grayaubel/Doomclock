@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Wifi off" clip-path="url(#clip0_0_90)">
+<path id="Icon" d="M0.666667 0.666667L15.3333 15.3333M11.1467 7.37333C11.6927 7.63983 12.2034 7.97353 12.6667 8.36667M3.33333 8.36667C4.32139 7.54055 5.51058 6.99081 6.78 6.77333M7.14 3.36667C8.56828 3.25158 10.0051 3.42544 11.3647 3.87788C12.7243 4.33032 13.9788 5.05205 15.0533 6M0.946667 6C1.87144 5.18257 2.9318 4.53282 4.08 4.08M5.68667 10.74C6.36347 10.2592 7.17312 10.0008 8.00333 10.0008C8.83355 10.0008 9.6432 10.2592 10.32 10.74M8 13.3333H8.00667" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke="#1E1E1E"/>
+</g>
+<defs>
+<clipPath id="clip0_0_90">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>

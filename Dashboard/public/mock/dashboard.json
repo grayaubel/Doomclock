@@ -1,0 +1,1828 @@
+{
+  "alarm": {
+    "currentTime": "01:19",
+    "alarmTime": "07:00",
+    "lockDurationMinutes": 45,
+    "lockStatus": "Unlocked",
+    "connected": true,
+    "connectionLabel": "Connected"
+  },
+  "sleepActivity": {
+    "title": "Sleep Activity",
+    "unit": "%",
+    "ranges": {
+      "Hour": {
+        "headline": 5,
+        "xLabel": "Time",
+        "xTicks": ["21:00", "00:00", "03:00", "06:00", "09:00"],
+        "summary": {
+          "sleepOnsetLatencyMinutes": 23,
+          "totalSleepTime": "7:56",
+          "wakeAfterSleepOnsetMinutes": 14
+        },
+        "points": [
+          {
+            "label": "21:00",
+            "detailLabel": "12h Window · 21:00",
+            "value": 9
+          },
+          {
+            "label": "21:15",
+            "detailLabel": "12h Window · 21:15",
+            "value": 8
+          },
+          {
+            "label": "21:30",
+            "detailLabel": "12h Window · 21:30",
+            "value": 7
+          },
+          {
+            "label": "21:45",
+            "detailLabel": "12h Window · 21:45",
+            "value": 6
+          },
+          {
+            "label": "22:00",
+            "detailLabel": "12h Window · 22:00",
+            "value": 8
+          },
+          {
+            "label": "22:15",
+            "detailLabel": "12h Window · 22:15",
+            "value": 12
+          },
+          {
+            "label": "22:30",
+            "detailLabel": "12h Window · 22:30",
+            "value": 22
+          },
+          {
+            "label": "22:45",
+            "detailLabel": "12h Window · 22:45",
+            "value": 44
+          },
+          {
+            "label": "23:00",
+            "detailLabel": "12h Window · 23:00",
+            "value": 66
+          },
+          {
+            "label": "23:15",
+            "detailLabel": "12h Window · 23:15",
+            "value": 78
+          },
+          {
+            "label": "23:30",
+            "detailLabel": "12h Window · 23:30",
+            "value": 82
+          },
+          {
+            "label": "23:45",
+            "detailLabel": "12h Window · 23:45",
+            "value": 79
+          },
+          {
+            "label": "00:00",
+            "detailLabel": "12h Window · 00:00",
+            "value": 74
+          },
+          {
+            "label": "00:15",
+            "detailLabel": "12h Window · 00:15",
+            "value": 81
+          },
+          {
+            "label": "00:30",
+            "detailLabel": "12h Window · 00:30",
+            "value": 86
+          },
+          {
+            "label": "00:45",
+            "detailLabel": "12h Window · 00:45",
+            "value": 77
+          },
+          {
+            "label": "01:00",
+            "detailLabel": "12h Window · 01:00",
+            "value": 56
+          },
+          {
+            "label": "01:15",
+            "detailLabel": "12h Window · 01:15",
+            "value": 49
+          },
+          {
+            "label": "01:30",
+            "detailLabel": "12h Window · 01:30",
+            "value": 64
+          },
+          {
+            "label": "01:45",
+            "detailLabel": "12h Window · 01:45",
+            "value": 73
+          },
+          {
+            "label": "02:00",
+            "detailLabel": "12h Window · 02:00",
+            "value": 76
+          },
+          {
+            "label": "02:15",
+            "detailLabel": "12h Window · 02:15",
+            "value": 84
+          },
+          {
+            "label": "02:30",
+            "detailLabel": "12h Window · 02:30",
+            "value": 91
+          },
+          {
+            "label": "02:45",
+            "detailLabel": "12h Window · 02:45",
+            "value": 78
+          },
+          {
+            "label": "03:00",
+            "detailLabel": "12h Window · 03:00",
+            "value": 69
+          },
+          {
+            "label": "03:15",
+            "detailLabel": "12h Window · 03:15",
+            "value": 67
+          },
+          {
+            "label": "03:30",
+            "detailLabel": "12h Window · 03:30",
+            "value": 72
+          },
+          {
+            "label": "03:45",
+            "detailLabel": "12h Window · 03:45",
+            "value": 79
+          },
+          {
+            "label": "04:00",
+            "detailLabel": "12h Window · 04:00",
+            "value": 75
+          },
+          {
+            "label": "04:15",
+            "detailLabel": "12h Window · 04:15",
+            "value": 68
+          },
+          {
+            "label": "04:30",
+            "detailLabel": "12h Window · 04:30",
+            "value": 58
+          },
+          {
+            "label": "04:45",
+            "detailLabel": "12h Window · 04:45",
+            "value": 46
+          },
+          {
+            "label": "05:00",
+            "detailLabel": "12h Window · 05:00",
+            "value": 62
+          },
+          {
+            "label": "05:15",
+            "detailLabel": "12h Window · 05:15",
+            "value": 71
+          },
+          {
+            "label": "05:30",
+            "detailLabel": "12h Window · 05:30",
+            "value": 69
+          },
+          {
+            "label": "05:45",
+            "detailLabel": "12h Window · 05:45",
+            "value": 54
+          },
+          {
+            "label": "06:00",
+            "detailLabel": "12h Window · 06:00",
+            "value": 28
+          },
+          {
+            "label": "06:15",
+            "detailLabel": "12h Window · 06:15",
+            "value": 12
+          },
+          {
+            "label": "06:30",
+            "detailLabel": "12h Window · 06:30",
+            "value": 7
+          },
+          {
+            "label": "06:45",
+            "detailLabel": "12h Window · 06:45",
+            "value": 6
+          },
+          {
+            "label": "07:00",
+            "detailLabel": "12h Window · 07:00",
+            "value": 5
+          },
+          {
+            "label": "07:15",
+            "detailLabel": "12h Window · 07:15",
+            "value": 6
+          },
+          {
+            "label": "07:30",
+            "detailLabel": "12h Window · 07:30",
+            "value": 8
+          },
+          {
+            "label": "07:45",
+            "detailLabel": "12h Window · 07:45",
+            "value": 7
+          },
+          {
+            "label": "08:00",
+            "detailLabel": "12h Window · 08:00",
+            "value": 6
+          },
+          {
+            "label": "08:15",
+            "detailLabel": "12h Window · 08:15",
+            "value": 5
+          },
+          {
+            "label": "08:30",
+            "detailLabel": "12h Window · 08:30",
+            "value": 5
+          },
+          {
+            "label": "08:45",
+            "detailLabel": "12h Window · 08:45",
+            "value": 6
+          },
+          {
+            "label": "09:00",
+            "detailLabel": "12h Window · 09:00",
+            "value": 5
+          }
+        ]
+      },
+      "Day": {
+        "headline": 34,
+        "xLabel": "Time",
+        "xTicks": ["00:00", "04:00", "08:00", "12:00", "16:00", "20:00", "23:00"],
+        "summary": {
+          "sleepOnsetLatencyMinutes": 21,
+          "totalSleepTime": "8:04",
+          "wakeAfterSleepOnsetMinutes": 12
+        },
+        "points": [
+          {
+            "label": "00:00",
+            "detailLabel": "Today · 00:00",
+            "value": 78
+          },
+          {
+            "label": "01:00",
+            "detailLabel": "Today · 01:00",
+            "value": 84
+          },
+          {
+            "label": "02:00",
+            "detailLabel": "Today · 02:00",
+            "value": 80
+          },
+          {
+            "label": "03:00",
+            "detailLabel": "Today · 03:00",
+            "value": 72
+          },
+          {
+            "label": "04:00",
+            "detailLabel": "Today · 04:00",
+            "value": 76
+          },
+          {
+            "label": "05:00",
+            "detailLabel": "Today · 05:00",
+            "value": 68
+          },
+          {
+            "label": "06:00",
+            "detailLabel": "Today · 06:00",
+            "value": 54
+          },
+          {
+            "label": "07:00",
+            "detailLabel": "Today · 07:00",
+            "value": 24
+          },
+          {
+            "label": "08:00",
+            "detailLabel": "Today · 08:00",
+            "value": 10
+          },
+          {
+            "label": "09:00",
+            "detailLabel": "Today · 09:00",
+            "value": 8
+          },
+          {
+            "label": "10:00",
+            "detailLabel": "Today · 10:00",
+            "value": 7
+          },
+          {
+            "label": "11:00",
+            "detailLabel": "Today · 11:00",
+            "value": 6
+          },
+          {
+            "label": "12:00",
+            "detailLabel": "Today · 12:00",
+            "value": 9
+          },
+          {
+            "label": "13:00",
+            "detailLabel": "Today · 13:00",
+            "value": 14
+          },
+          {
+            "label": "14:00",
+            "detailLabel": "Today · 14:00",
+            "value": 18
+          },
+          {
+            "label": "15:00",
+            "detailLabel": "Today · 15:00",
+            "value": 12
+          },
+          {
+            "label": "16:00",
+            "detailLabel": "Today · 16:00",
+            "value": 8
+          },
+          {
+            "label": "17:00",
+            "detailLabel": "Today · 17:00",
+            "value": 7
+          },
+          {
+            "label": "18:00",
+            "detailLabel": "Today · 18:00",
+            "value": 9
+          },
+          {
+            "label": "19:00",
+            "detailLabel": "Today · 19:00",
+            "value": 11
+          },
+          {
+            "label": "20:00",
+            "detailLabel": "Today · 20:00",
+            "value": 14
+          },
+          {
+            "label": "21:00",
+            "detailLabel": "Today · 21:00",
+            "value": 22
+          },
+          {
+            "label": "22:00",
+            "detailLabel": "Today · 22:00",
+            "value": 46
+          },
+          {
+            "label": "23:00",
+            "detailLabel": "Today · 23:00",
+            "value": 71
+          }
+        ]
+      },
+      "Week": {
+        "headline": 79,
+        "xLabel": "Day",
+        "xTicks": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        "summary": {
+          "sleepOnsetLatencyMinutes": 19,
+          "totalSleepTime": "7:48",
+          "wakeAfterSleepOnsetMinutes": 15
+        },
+        "points": [
+          {
+            "label": "Mon",
+            "detailLabel": "Monday · Daily Avg",
+            "value": 74
+          },
+          {
+            "label": "Tue",
+            "detailLabel": "Tuesday · Daily Avg",
+            "value": 79
+          },
+          {
+            "label": "Wed",
+            "detailLabel": "Wednesday · Daily Avg",
+            "value": 68
+          },
+          {
+            "label": "Thu",
+            "detailLabel": "Thursday · Daily Avg",
+            "value": 83
+          },
+          {
+            "label": "Fri",
+            "detailLabel": "Friday · Daily Avg",
+            "value": 76
+          },
+          {
+            "label": "Sat",
+            "detailLabel": "Saturday · Daily Avg",
+            "value": 89
+          },
+          {
+            "label": "Sun",
+            "detailLabel": "Sunday · Daily Avg",
+            "value": 82
+          }
+        ]
+      },
+      "Month": {
+        "headline": 74,
+        "xLabel": "Date",
+        "xTicks": ["1", "6", "12", "18", "24", "30"],
+        "summary": {
+          "sleepOnsetLatencyMinutes": 22,
+          "totalSleepTime": "7:52",
+          "wakeAfterSleepOnsetMinutes": 13
+        },
+        "points": [
+          {
+            "label": "1",
+            "detailLabel": "Nov 1, 2026",
+            "value": 79
+          },
+          {
+            "label": "2",
+            "detailLabel": "Nov 2, 2026",
+            "value": 83
+          },
+          {
+            "label": "3",
+            "detailLabel": "Nov 3, 2026",
+            "value": 82
+          },
+          {
+            "label": "4",
+            "detailLabel": "Nov 4, 2026",
+            "value": 81
+          },
+          {
+            "label": "5",
+            "detailLabel": "Nov 5, 2026",
+            "value": 82
+          },
+          {
+            "label": "6",
+            "detailLabel": "Nov 6, 2026",
+            "value": 81
+          },
+          {
+            "label": "7",
+            "detailLabel": "Nov 7, 2026",
+            "value": 74
+          },
+          {
+            "label": "8",
+            "detailLabel": "Nov 8, 2026",
+            "value": 63
+          },
+          {
+            "label": "9",
+            "detailLabel": "Nov 9, 2026",
+            "value": 57
+          },
+          {
+            "label": "10",
+            "detailLabel": "Nov 10, 2026",
+            "value": 61
+          },
+          {
+            "label": "11",
+            "detailLabel": "Nov 11, 2026",
+            "value": 71
+          },
+          {
+            "label": "12",
+            "detailLabel": "Nov 12, 2026",
+            "value": 80
+          },
+          {
+            "label": "13",
+            "detailLabel": "Nov 13, 2026",
+            "value": 83
+          },
+          {
+            "label": "14",
+            "detailLabel": "Nov 14, 2026",
+            "value": 82
+          },
+          {
+            "label": "15",
+            "detailLabel": "Nov 15, 2026",
+            "value": 81
+          },
+          {
+            "label": "16",
+            "detailLabel": "Nov 16, 2026",
+            "value": 82
+          },
+          {
+            "label": "17",
+            "detailLabel": "Nov 17, 2026",
+            "value": 80
+          },
+          {
+            "label": "18",
+            "detailLabel": "Nov 18, 2026",
+            "value": 73
+          },
+          {
+            "label": "19",
+            "detailLabel": "Nov 19, 2026",
+            "value": 62
+          },
+          {
+            "label": "20",
+            "detailLabel": "Nov 20, 2026",
+            "value": 57
+          },
+          {
+            "label": "21",
+            "detailLabel": "Nov 21, 2026",
+            "value": 61
+          },
+          {
+            "label": "22",
+            "detailLabel": "Nov 22, 2026",
+            "value": 72
+          },
+          {
+            "label": "23",
+            "detailLabel": "Nov 23, 2026",
+            "value": 81
+          },
+          {
+            "label": "24",
+            "detailLabel": "Nov 24, 2026",
+            "value": 84
+          },
+          {
+            "label": "25",
+            "detailLabel": "Nov 25, 2026",
+            "value": 82
+          },
+          {
+            "label": "26",
+            "detailLabel": "Nov 26, 2026",
+            "value": 81
+          },
+          {
+            "label": "27",
+            "detailLabel": "Nov 27, 2026",
+            "value": 81
+          },
+          {
+            "label": "28",
+            "detailLabel": "Nov 28, 2026",
+            "value": 79
+          },
+          {
+            "label": "29",
+            "detailLabel": "Nov 29, 2026",
+            "value": 71
+          },
+          {
+            "label": "30",
+            "detailLabel": "Nov 30, 2026",
+            "value": 61
+          }
+        ]
+      }
+    }
+  },
+  "sensors": {
+    "Temperature": {
+      "name": "Temperature",
+      "unit": "°C",
+      "ranges": {
+        "Hour": {
+          "headline": 23,
+          "xLabel": "Time",
+          "xTicks": ["00:20", "00:40", "01:00", "01:20"],
+          "points": [
+            {
+              "label": "00:20",
+              "detailLabel": "Last Hour · 00:20",
+              "value": 22.7
+            },
+            {
+              "label": "00:25",
+              "detailLabel": "Last Hour · 00:25",
+              "value": 22.9
+            },
+            {
+              "label": "00:30",
+              "detailLabel": "Last Hour · 00:30",
+              "value": 23.1
+            },
+            {
+              "label": "00:35",
+              "detailLabel": "Last Hour · 00:35",
+              "value": 23.2
+            },
+            {
+              "label": "00:40",
+              "detailLabel": "Last Hour · 00:40",
+              "value": 23
+            },
+            {
+              "label": "00:45",
+              "detailLabel": "Last Hour · 00:45",
+              "value": 22.7
+            },
+            {
+              "label": "00:50",
+              "detailLabel": "Last Hour · 00:50",
+              "value": 22.6
+            },
+            {
+              "label": "00:55",
+              "detailLabel": "Last Hour · 00:55",
+              "value": 22.9
+            },
+            {
+              "label": "01:00",
+              "detailLabel": "Last Hour · 01:00",
+              "value": 23.2
+            },
+            {
+              "label": "01:05",
+              "detailLabel": "Last Hour · 01:05",
+              "value": 23.3
+            },
+            {
+              "label": "01:10",
+              "detailLabel": "Last Hour · 01:10",
+              "value": 23.1
+            },
+            {
+              "label": "01:15",
+              "detailLabel": "Last Hour · 01:15",
+              "value": 22.9
+            },
+            {
+              "label": "01:20",
+              "detailLabel": "Last Hour · 01:20",
+              "value": 23
+            }
+          ]
+        },
+        "Day": {
+          "headline": 23.1,
+          "xLabel": "Time",
+          "xTicks": ["00:00", "08:00", "16:00", "23:00"],
+          "points": [
+            {
+              "label": "00:00",
+              "detailLabel": "Today · 00:00",
+              "value": 22.4
+            },
+            {
+              "label": "01:00",
+              "detailLabel": "Today · 01:00",
+              "value": 22.2
+            },
+            {
+              "label": "02:00",
+              "detailLabel": "Today · 02:00",
+              "value": 22
+            },
+            {
+              "label": "03:00",
+              "detailLabel": "Today · 03:00",
+              "value": 21.9
+            },
+            {
+              "label": "04:00",
+              "detailLabel": "Today · 04:00",
+              "value": 21.8
+            },
+            {
+              "label": "05:00",
+              "detailLabel": "Today · 05:00",
+              "value": 21.7
+            },
+            {
+              "label": "06:00",
+              "detailLabel": "Today · 06:00",
+              "value": 21.9
+            },
+            {
+              "label": "07:00",
+              "detailLabel": "Today · 07:00",
+              "value": 22.3
+            },
+            {
+              "label": "08:00",
+              "detailLabel": "Today · 08:00",
+              "value": 22.7
+            },
+            {
+              "label": "09:00",
+              "detailLabel": "Today · 09:00",
+              "value": 23.1
+            },
+            {
+              "label": "10:00",
+              "detailLabel": "Today · 10:00",
+              "value": 23.5
+            },
+            {
+              "label": "11:00",
+              "detailLabel": "Today · 11:00",
+              "value": 23.8
+            },
+            {
+              "label": "12:00",
+              "detailLabel": "Today · 12:00",
+              "value": 24
+            },
+            {
+              "label": "13:00",
+              "detailLabel": "Today · 13:00",
+              "value": 24.2
+            },
+            {
+              "label": "14:00",
+              "detailLabel": "Today · 14:00",
+              "value": 24.3
+            },
+            {
+              "label": "15:00",
+              "detailLabel": "Today · 15:00",
+              "value": 24.2
+            },
+            {
+              "label": "16:00",
+              "detailLabel": "Today · 16:00",
+              "value": 24
+            },
+            {
+              "label": "17:00",
+              "detailLabel": "Today · 17:00",
+              "value": 23.7
+            },
+            {
+              "label": "18:00",
+              "detailLabel": "Today · 18:00",
+              "value": 23.4
+            },
+            {
+              "label": "19:00",
+              "detailLabel": "Today · 19:00",
+              "value": 23.2
+            },
+            {
+              "label": "20:00",
+              "detailLabel": "Today · 20:00",
+              "value": 23
+            },
+            {
+              "label": "21:00",
+              "detailLabel": "Today · 21:00",
+              "value": 22.9
+            },
+            {
+              "label": "22:00",
+              "detailLabel": "Today · 22:00",
+              "value": 22.7
+            },
+            {
+              "label": "23:00",
+              "detailLabel": "Today · 23:00",
+              "value": 22.6
+            }
+          ]
+        },
+        "Week": {
+          "headline": 23.1,
+          "xLabel": "Day",
+          "xTicks": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          "points": [
+            {
+              "label": "Mon",
+              "detailLabel": "Monday · Daily Avg",
+              "value": 22.8
+            },
+            {
+              "label": "Tue",
+              "detailLabel": "Tuesday · Daily Avg",
+              "value": 23.1
+            },
+            {
+              "label": "Wed",
+              "detailLabel": "Wednesday · Daily Avg",
+              "value": 22.5
+            },
+            {
+              "label": "Thu",
+              "detailLabel": "Thursday · Daily Avg",
+              "value": 23.4
+            },
+            {
+              "label": "Fri",
+              "detailLabel": "Friday · Daily Avg",
+              "value": 23.7
+            },
+            {
+              "label": "Sat",
+              "detailLabel": "Saturday · Daily Avg",
+              "value": 22.9
+            },
+            {
+              "label": "Sun",
+              "detailLabel": "Sunday · Daily Avg",
+              "value": 23
+            }
+          ]
+        },
+        "Month": {
+          "headline": 22.9,
+          "xLabel": "Date",
+          "xTicks": ["1", "8", "15", "22", "30"],
+          "points": [
+            {
+              "label": "1",
+              "detailLabel": "Nov 1, 2026",
+              "value": 23.3
+            },
+            {
+              "label": "2",
+              "detailLabel": "Nov 2, 2026",
+              "value": 23.5
+            },
+            {
+              "label": "3",
+              "detailLabel": "Nov 3, 2026",
+              "value": 23.5
+            },
+            {
+              "label": "4",
+              "detailLabel": "Nov 4, 2026",
+              "value": 23.4
+            },
+            {
+              "label": "5",
+              "detailLabel": "Nov 5, 2026",
+              "value": 23.4
+            },
+            {
+              "label": "6",
+              "detailLabel": "Nov 6, 2026",
+              "value": 23.4
+            },
+            {
+              "label": "7",
+              "detailLabel": "Nov 7, 2026",
+              "value": 23.3
+            },
+            {
+              "label": "8",
+              "detailLabel": "Nov 8, 2026",
+              "value": 23.1
+            },
+            {
+              "label": "9",
+              "detailLabel": "Nov 9, 2026",
+              "value": 22.6
+            },
+            {
+              "label": "10",
+              "detailLabel": "Nov 10, 2026",
+              "value": 22
+            },
+            {
+              "label": "11",
+              "detailLabel": "Nov 11, 2026",
+              "value": 21.7
+            },
+            {
+              "label": "12",
+              "detailLabel": "Nov 12, 2026",
+              "value": 21.9
+            },
+            {
+              "label": "13",
+              "detailLabel": "Nov 13, 2026",
+              "value": 22.4
+            },
+            {
+              "label": "14",
+              "detailLabel": "Nov 14, 2026",
+              "value": 23.1
+            },
+            {
+              "label": "15",
+              "detailLabel": "Nov 15, 2026",
+              "value": 23.6
+            },
+            {
+              "label": "16",
+              "detailLabel": "Nov 16, 2026",
+              "value": 23.8
+            },
+            {
+              "label": "17",
+              "detailLabel": "Nov 17, 2026",
+              "value": 23.6
+            },
+            {
+              "label": "18",
+              "detailLabel": "Nov 18, 2026",
+              "value": 23.4
+            },
+            {
+              "label": "19",
+              "detailLabel": "Nov 19, 2026",
+              "value": 23.2
+            },
+            {
+              "label": "20",
+              "detailLabel": "Nov 20, 2026",
+              "value": 23.1
+            },
+            {
+              "label": "21",
+              "detailLabel": "Nov 21, 2026",
+              "value": 23
+            },
+            {
+              "label": "22",
+              "detailLabel": "Nov 22, 2026",
+              "value": 22.7
+            },
+            {
+              "label": "23",
+              "detailLabel": "Nov 23, 2026",
+              "value": 22.3
+            },
+            {
+              "label": "24",
+              "detailLabel": "Nov 24, 2026",
+              "value": 22
+            },
+            {
+              "label": "25",
+              "detailLabel": "Nov 25, 2026",
+              "value": 21.8
+            },
+            {
+              "label": "26",
+              "detailLabel": "Nov 26, 2026",
+              "value": 22.1
+            },
+            {
+              "label": "27",
+              "detailLabel": "Nov 27, 2026",
+              "value": 22.8
+            },
+            {
+              "label": "28",
+              "detailLabel": "Nov 28, 2026",
+              "value": 23.5
+            },
+            {
+              "label": "29",
+              "detailLabel": "Nov 29, 2026",
+              "value": 23.9
+            },
+            {
+              "label": "30",
+              "detailLabel": "Nov 30, 2026",
+              "value": 23.9
+            }
+          ]
+        }
+      }
+    },
+    "Humidity": {
+      "name": "Humidity",
+      "unit": "%",
+      "ranges": {
+        "Hour": {
+          "headline": 67,
+          "xLabel": "Time",
+          "xTicks": ["00:20", "00:40", "01:00", "01:20"],
+          "points": [
+            {
+              "label": "00:20",
+              "detailLabel": "Last Hour · 00:20",
+              "value": 64
+            },
+            {
+              "label": "00:25",
+              "detailLabel": "Last Hour · 00:25",
+              "value": 66
+            },
+            {
+              "label": "00:30",
+              "detailLabel": "Last Hour · 00:30",
+              "value": 70
+            },
+            {
+              "label": "00:35",
+              "detailLabel": "Last Hour · 00:35",
+              "value": 72
+            },
+            {
+              "label": "00:40",
+              "detailLabel": "Last Hour · 00:40",
+              "value": 69
+            },
+            {
+              "label": "00:45",
+              "detailLabel": "Last Hour · 00:45",
+              "value": 63
+            },
+            {
+              "label": "00:50",
+              "detailLabel": "Last Hour · 00:50",
+              "value": 60
+            },
+            {
+              "label": "00:55",
+              "detailLabel": "Last Hour · 00:55",
+              "value": 64
+            },
+            {
+              "label": "01:00",
+              "detailLabel": "Last Hour · 01:00",
+              "value": 71
+            },
+            {
+              "label": "01:05",
+              "detailLabel": "Last Hour · 01:05",
+              "value": 74
+            },
+            {
+              "label": "01:10",
+              "detailLabel": "Last Hour · 01:10",
+              "value": 72
+            },
+            {
+              "label": "01:15",
+              "detailLabel": "Last Hour · 01:15",
+              "value": 69
+            },
+            {
+              "label": "01:20",
+              "detailLabel": "Last Hour · 01:20",
+              "value": 67
+            }
+          ]
+        },
+        "Day": {
+          "headline": 68,
+          "xLabel": "Time",
+          "xTicks": ["00:00", "08:00", "16:00", "23:00"],
+          "points": [
+            {
+              "label": "00:00",
+              "detailLabel": "Today · 00:00",
+              "value": 72
+            },
+            {
+              "label": "01:00",
+              "detailLabel": "Today · 01:00",
+              "value": 74
+            },
+            {
+              "label": "02:00",
+              "detailLabel": "Today · 02:00",
+              "value": 75
+            },
+            {
+              "label": "03:00",
+              "detailLabel": "Today · 03:00",
+              "value": 76
+            },
+            {
+              "label": "04:00",
+              "detailLabel": "Today · 04:00",
+              "value": 78
+            },
+            {
+              "label": "05:00",
+              "detailLabel": "Today · 05:00",
+              "value": 79
+            },
+            {
+              "label": "06:00",
+              "detailLabel": "Today · 06:00",
+              "value": 77
+            },
+            {
+              "label": "07:00",
+              "detailLabel": "Today · 07:00",
+              "value": 74
+            },
+            {
+              "label": "08:00",
+              "detailLabel": "Today · 08:00",
+              "value": 70
+            },
+            {
+              "label": "09:00",
+              "detailLabel": "Today · 09:00",
+              "value": 66
+            },
+            {
+              "label": "10:00",
+              "detailLabel": "Today · 10:00",
+              "value": 63
+            },
+            {
+              "label": "11:00",
+              "detailLabel": "Today · 11:00",
+              "value": 60
+            },
+            {
+              "label": "12:00",
+              "detailLabel": "Today · 12:00",
+              "value": 58
+            },
+            {
+              "label": "13:00",
+              "detailLabel": "Today · 13:00",
+              "value": 57
+            },
+            {
+              "label": "14:00",
+              "detailLabel": "Today · 14:00",
+              "value": 56
+            },
+            {
+              "label": "15:00",
+              "detailLabel": "Today · 15:00",
+              "value": 57
+            },
+            {
+              "label": "16:00",
+              "detailLabel": "Today · 16:00",
+              "value": 59
+            },
+            {
+              "label": "17:00",
+              "detailLabel": "Today · 17:00",
+              "value": 62
+            },
+            {
+              "label": "18:00",
+              "detailLabel": "Today · 18:00",
+              "value": 65
+            },
+            {
+              "label": "19:00",
+              "detailLabel": "Today · 19:00",
+              "value": 67
+            },
+            {
+              "label": "20:00",
+              "detailLabel": "Today · 20:00",
+              "value": 69
+            },
+            {
+              "label": "21:00",
+              "detailLabel": "Today · 21:00",
+              "value": 70
+            },
+            {
+              "label": "22:00",
+              "detailLabel": "Today · 22:00",
+              "value": 71
+            },
+            {
+              "label": "23:00",
+              "detailLabel": "Today · 23:00",
+              "value": 71
+            }
+          ]
+        },
+        "Week": {
+          "headline": 67,
+          "xLabel": "Day",
+          "xTicks": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          "points": [
+            {
+              "label": "Mon",
+              "detailLabel": "Monday · Daily Avg",
+              "value": 66
+            },
+            {
+              "label": "Tue",
+              "detailLabel": "Tuesday · Daily Avg",
+              "value": 71
+            },
+            {
+              "label": "Wed",
+              "detailLabel": "Wednesday · Daily Avg",
+              "value": 76
+            },
+            {
+              "label": "Thu",
+              "detailLabel": "Thursday · Daily Avg",
+              "value": 64
+            },
+            {
+              "label": "Fri",
+              "detailLabel": "Friday · Daily Avg",
+              "value": 59
+            },
+            {
+              "label": "Sat",
+              "detailLabel": "Saturday · Daily Avg",
+              "value": 68
+            },
+            {
+              "label": "Sun",
+              "detailLabel": "Sunday · Daily Avg",
+              "value": 67
+            }
+          ]
+        },
+        "Month": {
+          "headline": 68,
+          "xLabel": "Date",
+          "xTicks": ["1", "8", "15", "22", "30"],
+          "points": [
+            {
+              "label": "1",
+              "detailLabel": "Nov 1, 2026",
+              "value": 77
+            },
+            {
+              "label": "2",
+              "detailLabel": "Nov 2, 2026",
+              "value": 78
+            },
+            {
+              "label": "3",
+              "detailLabel": "Nov 3, 2026",
+              "value": 75
+            },
+            {
+              "label": "4",
+              "detailLabel": "Nov 4, 2026",
+              "value": 72
+            },
+            {
+              "label": "5",
+              "detailLabel": "Nov 5, 2026",
+              "value": 71
+            },
+            {
+              "label": "6",
+              "detailLabel": "Nov 6, 2026",
+              "value": 70
+            },
+            {
+              "label": "7",
+              "detailLabel": "Nov 7, 2026",
+              "value": 67
+            },
+            {
+              "label": "8",
+              "detailLabel": "Nov 8, 2026",
+              "value": 61
+            },
+            {
+              "label": "9",
+              "detailLabel": "Nov 9, 2026",
+              "value": 56
+            },
+            {
+              "label": "10",
+              "detailLabel": "Nov 10, 2026",
+              "value": 57
+            },
+            {
+              "label": "11",
+              "detailLabel": "Nov 11, 2026",
+              "value": 64
+            },
+            {
+              "label": "12",
+              "detailLabel": "Nov 12, 2026",
+              "value": 72
+            },
+            {
+              "label": "13",
+              "detailLabel": "Nov 13, 2026",
+              "value": 76
+            },
+            {
+              "label": "14",
+              "detailLabel": "Nov 14, 2026",
+              "value": 75
+            },
+            {
+              "label": "15",
+              "detailLabel": "Nov 15, 2026",
+              "value": 73
+            },
+            {
+              "label": "16",
+              "detailLabel": "Nov 16, 2026",
+              "value": 73
+            },
+            {
+              "label": "17",
+              "detailLabel": "Nov 17, 2026",
+              "value": 74
+            },
+            {
+              "label": "18",
+              "detailLabel": "Nov 18, 2026",
+              "value": 72
+            },
+            {
+              "label": "19",
+              "detailLabel": "Nov 19, 2026",
+              "value": 66
+            },
+            {
+              "label": "20",
+              "detailLabel": "Nov 20, 2026",
+              "value": 58
+            },
+            {
+              "label": "21",
+              "detailLabel": "Nov 21, 2026",
+              "value": 55
+            },
+            {
+              "label": "22",
+              "detailLabel": "Nov 22, 2026",
+              "value": 58
+            },
+            {
+              "label": "23",
+              "detailLabel": "Nov 23, 2026",
+              "value": 66
+            },
+            {
+              "label": "24",
+              "detailLabel": "Nov 24, 2026",
+              "value": 72
+            },
+            {
+              "label": "25",
+              "detailLabel": "Nov 25, 2026",
+              "value": 74
+            },
+            {
+              "label": "26",
+              "detailLabel": "Nov 26, 2026",
+              "value": 73
+            },
+            {
+              "label": "27",
+              "detailLabel": "Nov 27, 2026",
+              "value": 73
+            },
+            {
+              "label": "28",
+              "detailLabel": "Nov 28, 2026",
+              "value": 75
+            },
+            {
+              "label": "29",
+              "detailLabel": "Nov 29, 2026",
+              "value": 76
+            },
+            {
+              "label": "30",
+              "detailLabel": "Nov 30, 2026",
+              "value": 72
+            }
+          ]
+        }
+      }
+    },
+    "Luminosity": {
+      "name": "Luminosity",
+      "unit": "LX",
+      "ranges": {
+        "Hour": {
+          "headline": 223,
+          "xLabel": "Time",
+          "xTicks": ["00:20", "00:40", "01:00", "01:20"],
+          "points": [
+            {
+              "label": "00:20",
+              "detailLabel": "Last Hour · 00:20",
+              "value": 185
+            },
+            {
+              "label": "00:25",
+              "detailLabel": "Last Hour · 00:25",
+              "value": 212
+            },
+            {
+              "label": "00:30",
+              "detailLabel": "Last Hour · 00:30",
+              "value": 238
+            },
+            {
+              "label": "00:35",
+              "detailLabel": "Last Hour · 00:35",
+              "value": 248
+            },
+            {
+              "label": "00:40",
+              "detailLabel": "Last Hour · 00:40",
+              "value": 226
+            },
+            {
+              "label": "00:45",
+              "detailLabel": "Last Hour · 00:45",
+              "value": 178
+            },
+            {
+              "label": "00:50",
+              "detailLabel": "Last Hour · 00:50",
+              "value": 158
+            },
+            {
+              "label": "00:55",
+              "detailLabel": "Last Hour · 00:55",
+              "value": 174
+            },
+            {
+              "label": "01:00",
+              "detailLabel": "Last Hour · 01:00",
+              "value": 224
+            },
+            {
+              "label": "01:05",
+              "detailLabel": "Last Hour · 01:05",
+              "value": 256
+            },
+            {
+              "label": "01:10",
+              "detailLabel": "Last Hour · 01:10",
+              "value": 242
+            },
+            {
+              "label": "01:15",
+              "detailLabel": "Last Hour · 01:15",
+              "value": 214
+            },
+            {
+              "label": "01:20",
+              "detailLabel": "Last Hour · 01:20",
+              "value": 223
+            }
+          ]
+        },
+        "Day": {
+          "headline": 189,
+          "xLabel": "Time",
+          "xTicks": ["00:00", "08:00", "16:00", "23:00"],
+          "points": [
+            {
+              "label": "00:00",
+              "detailLabel": "Today · 00:00",
+              "value": 42
+            },
+            {
+              "label": "01:00",
+              "detailLabel": "Today · 01:00",
+              "value": 28
+            },
+            {
+              "label": "02:00",
+              "detailLabel": "Today · 02:00",
+              "value": 22
+            },
+            {
+              "label": "03:00",
+              "detailLabel": "Today · 03:00",
+              "value": 18
+            },
+            {
+              "label": "04:00",
+              "detailLabel": "Today · 04:00",
+              "value": 18
+            },
+            {
+              "label": "05:00",
+              "detailLabel": "Today · 05:00",
+              "value": 24
+            },
+            {
+              "label": "06:00",
+              "detailLabel": "Today · 06:00",
+              "value": 58
+            },
+            {
+              "label": "07:00",
+              "detailLabel": "Today · 07:00",
+              "value": 118
+            },
+            {
+              "label": "08:00",
+              "detailLabel": "Today · 08:00",
+              "value": 195
+            },
+            {
+              "label": "09:00",
+              "detailLabel": "Today · 09:00",
+              "value": 268
+            },
+            {
+              "label": "10:00",
+              "detailLabel": "Today · 10:00",
+              "value": 318
+            },
+            {
+              "label": "11:00",
+              "detailLabel": "Today · 11:00",
+              "value": 348
+            },
+            {
+              "label": "12:00",
+              "detailLabel": "Today · 12:00",
+              "value": 366
+            },
+            {
+              "label": "13:00",
+              "detailLabel": "Today · 13:00",
+              "value": 362
+            },
+            {
+              "label": "14:00",
+              "detailLabel": "Today · 14:00",
+              "value": 344
+            },
+            {
+              "label": "15:00",
+              "detailLabel": "Today · 15:00",
+              "value": 312
+            },
+            {
+              "label": "16:00",
+              "detailLabel": "Today · 16:00",
+              "value": 264
+            },
+            {
+              "label": "17:00",
+              "detailLabel": "Today · 17:00",
+              "value": 228
+            },
+            {
+              "label": "18:00",
+              "detailLabel": "Today · 18:00",
+              "value": 206
+            },
+            {
+              "label": "19:00",
+              "detailLabel": "Today · 19:00",
+              "value": 198
+            },
+            {
+              "label": "20:00",
+              "detailLabel": "Today · 20:00",
+              "value": 186
+            },
+            {
+              "label": "21:00",
+              "detailLabel": "Today · 21:00",
+              "value": 154
+            },
+            {
+              "label": "22:00",
+              "detailLabel": "Today · 22:00",
+              "value": 108
+            },
+            {
+              "label": "23:00",
+              "detailLabel": "Today · 23:00",
+              "value": 68
+            }
+          ]
+        },
+        "Week": {
+          "headline": 247,
+          "xLabel": "Day",
+          "xTicks": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          "points": [
+            {
+              "label": "Mon",
+              "detailLabel": "Monday · Daily Avg",
+              "value": 215
+            },
+            {
+              "label": "Tue",
+              "detailLabel": "Tuesday · Daily Avg",
+              "value": 248
+            },
+            {
+              "label": "Wed",
+              "detailLabel": "Wednesday · Daily Avg",
+              "value": 192
+            },
+            {
+              "label": "Thu",
+              "detailLabel": "Thursday · Daily Avg",
+              "value": 276
+            },
+            {
+              "label": "Fri",
+              "detailLabel": "Friday · Daily Avg",
+              "value": 260
+            },
+            {
+              "label": "Sat",
+              "detailLabel": "Saturday · Daily Avg",
+              "value": 312
+            },
+            {
+              "label": "Sun",
+              "detailLabel": "Sunday · Daily Avg",
+              "value": 223
+            }
+          ]
+        },
+        "Month": {
+          "headline": 235,
+          "xLabel": "Date",
+          "xTicks": ["1", "8", "15", "22", "30"],
+          "points": [
+            {
+              "label": "1",
+              "detailLabel": "Nov 1, 2026",
+              "value": 263
+            },
+            {
+              "label": "2",
+              "detailLabel": "Nov 2, 2026",
+              "value": 292
+            },
+            {
+              "label": "3",
+              "detailLabel": "Nov 3, 2026",
+              "value": 295
+            },
+            {
+              "label": "4",
+              "detailLabel": "Nov 4, 2026",
+              "value": 286
+            },
+            {
+              "label": "5",
+              "detailLabel": "Nov 5, 2026",
+              "value": 276
+            },
+            {
+              "label": "6",
+              "detailLabel": "Nov 6, 2026",
+              "value": 266
+            },
+            {
+              "label": "7",
+              "detailLabel": "Nov 7, 2026",
+              "value": 246
+            },
+            {
+              "label": "8",
+              "detailLabel": "Nov 8, 2026",
+              "value": 210
+            },
+            {
+              "label": "9",
+              "detailLabel": "Nov 9, 2026",
+              "value": 168
+            },
+            {
+              "label": "10",
+              "detailLabel": "Nov 10, 2026",
+              "value": 141
+            },
+            {
+              "label": "11",
+              "detailLabel": "Nov 11, 2026",
+              "value": 152
+            },
+            {
+              "label": "12",
+              "detailLabel": "Nov 12, 2026",
+              "value": 202
+            },
+            {
+              "label": "13",
+              "detailLabel": "Nov 13, 2026",
+              "value": 270
+            },
+            {
+              "label": "14",
+              "detailLabel": "Nov 14, 2026",
+              "value": 322
+            },
+            {
+              "label": "15",
+              "detailLabel": "Nov 15, 2026",
+              "value": 333
+            },
+            {
+              "label": "16",
+              "detailLabel": "Nov 16, 2026",
+              "value": 304
+            },
+            {
+              "label": "17",
+              "detailLabel": "Nov 17, 2026",
+              "value": 256
+            },
+            {
+              "label": "18",
+              "detailLabel": "Nov 18, 2026",
+              "value": 216
+            },
+            {
+              "label": "19",
+              "detailLabel": "Nov 19, 2026",
+              "value": 194
+            },
+            {
+              "label": "20",
+              "detailLabel": "Nov 20, 2026",
+              "value": 188
+            },
+            {
+              "label": "21",
+              "detailLabel": "Nov 21, 2026",
+              "value": 185
+            },
+            {
+              "label": "22",
+              "detailLabel": "Nov 22, 2026",
+              "value": 181
+            },
+            {
+              "label": "23",
+              "detailLabel": "Nov 23, 2026",
+              "value": 187
+            },
+            {
+              "label": "24",
+              "detailLabel": "Nov 24, 2026",
+              "value": 214
+            },
+            {
+              "label": "25",
+              "detailLabel": "Nov 25, 2026",
+              "value": 262
+            },
+            {
+              "label": "26",
+              "detailLabel": "Nov 26, 2026",
+              "value": 312
+            },
+            {
+              "label": "27",
+              "detailLabel": "Nov 27, 2026",
+              "value": 337
+            },
+            {
+              "label": "28",
+              "detailLabel": "Nov 28, 2026",
+              "value": 318
+            },
+            {
+              "label": "29",
+              "detailLabel": "Nov 29, 2026",
+              "value": 262
+            },
+            {
+              "label": "30",
+              "detailLabel": "Nov 30, 2026",
+              "value": 195
+            }
+          ]
+        }
+      }
+    }
+  }
+}

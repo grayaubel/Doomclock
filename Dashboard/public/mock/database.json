@@ -1,0 +1,284 @@
+{
+  "connection": {
+    "engine": "MongoDB",
+    "address": "245.214.2.3",
+    "secret": "doomclock11",
+    "connected": true,
+    "connectionLabel": "Connected"
+  },
+  "columns": ["Time Stamp", "Temp", "Light", "Humid", "Prediction"],
+  "totalResults": 403,
+  "pageSize": 10,
+  "records": [
+    {
+      "id": "rec-01",
+      "timestamp": "18/11/2026 01:15:00",
+      "range": "Hour",
+      "temp": 23.0,
+      "light": 223.0,
+      "humid": 67.0,
+      "prediction": 95
+    },
+    {
+      "id": "rec-02",
+      "timestamp": "18/11/2026 01:10:00",
+      "range": "Hour",
+      "temp": 22.9,
+      "light": 214.0,
+      "humid": 69.0,
+      "prediction": 94
+    },
+    {
+      "id": "rec-03",
+      "timestamp": "18/11/2026 01:05:00",
+      "range": "Hour",
+      "temp": 23.1,
+      "light": 242.0,
+      "humid": 72.0,
+      "prediction": 92
+    },
+    {
+      "id": "rec-04",
+      "timestamp": "18/11/2026 01:00:00",
+      "range": "Hour",
+      "temp": 23.3,
+      "light": 256.0,
+      "humid": 74.0,
+      "prediction": 90
+    },
+    {
+      "id": "rec-05",
+      "timestamp": "18/11/2026 00:55:00",
+      "range": "Hour",
+      "temp": 23.2,
+      "light": 224.0,
+      "humid": 71.0,
+      "prediction": 91
+    },
+    {
+      "id": "rec-06",
+      "timestamp": "18/11/2026 00:50:00",
+      "range": "Hour",
+      "temp": 22.9,
+      "light": 174.0,
+      "humid": 64.0,
+      "prediction": 93
+    },
+    {
+      "id": "rec-07",
+      "timestamp": "18/11/2026 00:45:00",
+      "range": "Hour",
+      "temp": 22.6,
+      "light": 158.0,
+      "humid": 60.0,
+      "prediction": 96
+    },
+    {
+      "id": "rec-08",
+      "timestamp": "18/11/2026 00:40:00",
+      "range": "Hour",
+      "temp": 22.7,
+      "light": 178.0,
+      "humid": 63.0,
+      "prediction": 94
+    },
+    {
+      "id": "rec-09",
+      "timestamp": "18/11/2026 00:35:00",
+      "range": "Hour",
+      "temp": 23.0,
+      "light": 226.0,
+      "humid": 69.0,
+      "prediction": 89
+    },
+    {
+      "id": "rec-10",
+      "timestamp": "18/11/2026 00:30:00",
+      "range": "Hour",
+      "temp": 23.2,
+      "light": 248.0,
+      "humid": 72.0,
+      "prediction": 87
+    },
+    {
+      "id": "rec-11",
+      "timestamp": "18/11/2026 00:25:00",
+      "range": "Hour",
+      "temp": 23.1,
+      "light": 238.0,
+      "humid": 70.0,
+      "prediction": 88
+    },
+    {
+      "id": "rec-12",
+      "timestamp": "18/11/2026 00:20:00",
+      "range": "Hour",
+      "temp": 22.9,
+      "light": 212.0,
+      "humid": 66.0,
+      "prediction": 90
+    },
+    {
+      "id": "rec-13",
+      "timestamp": "17/11/2026 23:00:00",
+      "range": "Day",
+      "temp": 22.6,
+      "light": 68.0,
+      "humid": 71.0,
+      "prediction": 86
+    },
+    {
+      "id": "rec-14",
+      "timestamp": "17/11/2026 20:00:00",
+      "range": "Day",
+      "temp": 23.0,
+      "light": 186.0,
+      "humid": 69.0,
+      "prediction": 42
+    },
+    {
+      "id": "rec-15",
+      "timestamp": "17/11/2026 17:00:00",
+      "range": "Day",
+      "temp": 23.7,
+      "light": 228.0,
+      "humid": 62.0,
+      "prediction": 18
+    },
+    {
+      "id": "rec-16",
+      "timestamp": "17/11/2026 14:00:00",
+      "range": "Day",
+      "temp": 24.3,
+      "light": 344.0,
+      "humid": 56.0,
+      "prediction": 15
+    },
+    {
+      "id": "rec-17",
+      "timestamp": "17/11/2026 11:00:00",
+      "range": "Day",
+      "temp": 23.8,
+      "light": 348.0,
+      "humid": 60.0,
+      "prediction": 12
+    },
+    {
+      "id": "rec-18",
+      "timestamp": "17/11/2026 08:00:00",
+      "range": "Day",
+      "temp": 22.7,
+      "light": 195.0,
+      "humid": 70.0,
+      "prediction": 24
+    },
+    {
+      "id": "rec-19",
+      "timestamp": "17/11/2026 05:00:00",
+      "range": "Day",
+      "temp": 21.7,
+      "light": 24.0,
+      "humid": 79.0,
+      "prediction": 91
+    },
+    {
+      "id": "rec-20",
+      "timestamp": "17/11/2026 02:00:00",
+      "range": "Day",
+      "temp": 22.0,
+      "light": 22.0,
+      "humid": 75.0,
+      "prediction": 93
+    },
+    {
+      "id": "rec-21",
+      "timestamp": "16/11/2026 23:30:00",
+      "range": "Week",
+      "temp": 22.9,
+      "light": 145.9,
+      "humid": 68.0,
+      "prediction": 85
+    },
+    {
+      "id": "rec-22",
+      "timestamp": "15/11/2026 22:45:00",
+      "range": "Week",
+      "temp": 23.7,
+      "light": 175.4,
+      "humid": 59.0,
+      "prediction": 82
+    },
+    {
+      "id": "rec-23",
+      "timestamp": "14/11/2026 23:10:00",
+      "range": "Week",
+      "temp": 23.4,
+      "light": 110.8,
+      "humid": 64.0,
+      "prediction": 88
+    },
+    {
+      "id": "rec-24",
+      "timestamp": "13/11/2026 23:50:00",
+      "range": "Week",
+      "temp": 22.5,
+      "light": 192.0,
+      "humid": 76.0,
+      "prediction": 79
+    },
+    {
+      "id": "rec-25",
+      "timestamp": "12/11/2026 22:20:00",
+      "range": "Week",
+      "temp": 23.1,
+      "light": 150.5,
+      "humid": 71.0,
+      "prediction": 84
+    },
+    {
+      "id": "rec-26",
+      "timestamp": "10/11/2026 23:15:00",
+      "range": "Month",
+      "temp": 23.0,
+      "light": 168.1,
+      "humid": 72.0,
+      "prediction": 81
+    },
+    {
+      "id": "rec-27",
+      "timestamp": "07/11/2026 22:40:00",
+      "range": "Month",
+      "temp": 22.4,
+      "light": 196.9,
+      "humid": 75.0,
+      "prediction": 90
+    },
+    {
+      "id": "rec-28",
+      "timestamp": "05/11/2026 23:05:00",
+      "range": "Month",
+      "temp": 23.6,
+      "light": 152.3,
+      "humid": 63.0,
+      "prediction": 80
+    },
+    {
+      "id": "rec-29",
+      "timestamp": "03/11/2026 22:55:00",
+      "range": "Month",
+      "temp": 22.8,
+      "light": 132.4,
+      "humid": 74.0,
+      "prediction": 86
+    },
+    {
+      "id": "rec-30",
+      "timestamp": "01/11/2026 23:30:00",
+      "range": "Month",
+      "temp": 23.2,
+      "light": 177.2,
+      "humid": 69.0,
+      "prediction": 85
+    }
+  ]
+}
